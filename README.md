@@ -19,7 +19,7 @@ Right now, there are four options:
 
 Installation is easy, simply follow the guide below.
 
-1. Install [Stylus](https://add0n.com/stylus.html).
+1. Install **Stylus**. ([Chrome Store]([https://add0n.com/stylus.html](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)), [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/)
 2. Install the [VortBlox theme](https://userstyles.world/style/30005/vortblox).
 3. Configure using the Extension bar.
 4. ggez.
