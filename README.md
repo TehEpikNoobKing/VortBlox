@@ -19,10 +19,12 @@ Right now, there are four options:
 
 Installation is easy, simply follow the guide below.
 
-1. Install **Stylus**. ([Chrome Store]([https://add0n.com/stylus.html](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne), [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/))
-2. Install the [VortBlox theme](https://userstyles.world/style/30005/vortblox).
-3. Configure using the Extension bar.
-4. ggez.
+1. Install **Stylus**:
+   - [Chrome Store](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
+   - [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/)
+3. Install the [VortBlox theme](https://userstyles.world/style/30005/vortblox).
+4. Configure using the Extension bar.
+5. ggez.
 
 ## Previews
 <img src="previews/homepage.png" alt="Home Page" title="Home Page">
