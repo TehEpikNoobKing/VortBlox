@@ -1,5 +1,5 @@
 /* ==UserStyle==
-@name VoltBlox
+@name VortBlox
 @namespace github.com/openstyles/stylus
 @version 1.0.0
 @description A theme for playvortex.io that replicates the Roblox 2016 style, just in case the graphics weren't 'nostalgic' enough, I guess...
@@ -12,135 +12,134 @@
 
 ==/UserStyle== */
 
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap");
-
-:root {
-    /* =========================
-       Colors
-       ========================= */
-
-    --background: #e3e3e3;
-    --surface: #fff;
-    --text: #191919;
-    --secondary-text: #616161;
-    --border: #b8b8b8;
-    --input-border: rgba(0, 0, 0, 0.15);
-
-    --primary: #7c3aed;
-    --primary-hover: #9050fe;
-
-    --volt-color: rgb(177, 81, 255);
-    --navbar-color: #481b93;
-
-    --primary2: #02b757;
-    --primary2-hover: #3fc679;
-
-    --danger: #e75750;
-
-    /* =========================
-       Effects
-       ========================= */
-
-    --primary-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
-    --hover-shadow: 0 1px 3px rgba(150, 150, 150, 0.74);
-
-    --radius: 3px;
-    --transition: 0.2s ease-in-out;
+@-moz-document url-prefix("https://playvortex.io") {
+    @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap");
     
-    --font: "Figtree"
-}
-
-& when (@robloxColors = 1) {
-    --volt-color: rgb(177, 81, 255);
-}
-
-
-/* =========================
-   Dark Mode
-   ========================= */
-
-& when (@darkMode = 1) {
     :root {
-        --background: #0b0b12;
-        --surface: #171020;
-        --text: #e5e5ea;
-        --secondary-text: #aaa;
-        --border: #45404d;
-        --input-border: rgba(255, 255, 255, 0.15);
+        /* =========================
+           Colors
+           ========================= */
 
-        --primary-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-        --hover-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
+        --background: #e3e3e3;
+        --surface: #fff;
+        --text: #191919;
+        --secondary-text: #616161;
+        --border: #b8b8b8;
+        --input-border: rgba(0, 0, 0, 0.15);
 
         --primary: #7c3aed;
         --primary-hover: #9050fe;
 
         --volt-color: rgb(177, 81, 255);
-        --navbar-color: #7c3aed;
+        --navbar-color: #481b93;
+
+        --primary2: #02b757;
+        --primary2-hover: #3fc679;
+
+        --danger: #e75750;
+
+        /* =========================
+           Effects
+           ========================= */
+
+        --primary-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
+        --hover-shadow: 0 1px 3px rgba(150, 150, 150, 0.74);
+
+        --radius: 3px;
+        --transition: 0.2s ease-in-out;
+
+        --font: "Figtree"
     }
-}
 
-& when (@sourceSansPro = 1) {
-    :root {
-        --font: "Source Sans Pro";
+    & when (@robloxColors = 1) {
+        --volt-color: rgb(177, 81, 255);
     }
-}
 
 
-/* =========================
-   Styles
-   ========================= */
+    /* =========================
+       Dark Mode
+       ========================= */
 
-.card-style() {
-    background-color: var(--surface) !important;
-    box-shadow: var(--primary-shadow) !important;
-    border-radius: var(--radius) !important;
-}
+    & when (@darkMode = 1) {
+        :root {
+            --background: #0b0b12;
+            --surface: #171020;
+            --text: #e5e5ea;
+            --secondary-text: #aaa;
+            --border: #45404d;
+            --input-border: rgba(255, 255, 255, 0.15);
 
-.input-style() {
-    background: var(--surface) !important;
-    border: 1px solid var(--input-border) !important;
-    border-radius: var(--radius) !important;
-    color: var(--text) !important;
-}
+            --primary-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+            --hover-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
 
-.primary-button() {
-    border: 1px solid var(--primary) !important;
-    background-color: var(--primary) !important;
-    border-color: var(--primary) !important;
-    color: #fff !important;
-    border-radius: var(--radius) !important;
-    transition: box-shadow var(--transition) !important;
-}
+            --primary: #7c3aed;
+            --primary-hover: #9050fe;
 
-.primary-button-hover() {
-    background-color: var(--primary-hover) !important;
-    border-color: var(--primary-hover) !important;
-    box-shadow: var(--hover-shadow) !important;
-    color: #fff !important;
-}
+            --volt-color: rgb(177, 81, 255);
+            --navbar-color: #7c3aed;
+        }
+    }
 
-.danger-button() {
-    background-color: transparent !important;
-    border-color: var(--danger) !important;
-    color: var(--danger) !important;
-    border-radius: var(--radius) !important;
-}
+    & when (@sourceSansPro = 1) {
+        :root {
+            --font: "Source Sans Pro";
+        }
+    }
 
-.primary2-button() {
-    background-color: var(--primary2) !important;
-    border-color: var(--primary2) !important;
-    color: #fff !important;
-    border-radius: var(--radius) !important;
-}
 
-.primary2-button-hover() {
-    background-color: var(--primary2-hover) !important;
-    border-color: var(--primary2-hover) !important;
-    box-shadow: var(--hover-shadow) !important;
-    color: #fff !important;
-}
+    /* =========================
+       Styles
+       ========================= */
 
-@-moz-document url-prefix("https://playvortex.io") {
+    .card-style() {
+        background-color: var(--surface) !important;
+        box-shadow: var(--primary-shadow) !important;
+        border-radius: var(--radius) !important;
+    }
+
+    .input-style() {
+        background: var(--surface) !important;
+        border: 1px solid var(--input-border) !important;
+        border-radius: var(--radius) !important;
+        color: var(--text) !important;
+    }
+
+    .primary-button() {
+        border: 1px solid var(--primary) !important;
+        background-color: var(--primary) !important;
+        border-color: var(--primary) !important;
+        color: #fff !important;
+        border-radius: var(--radius) !important;
+        transition: box-shadow var(--transition) !important;
+    }
+
+    .primary-button-hover() {
+        background-color: var(--primary-hover) !important;
+        border-color: var(--primary-hover) !important;
+        box-shadow: var(--hover-shadow) !important;
+        color: #fff !important;
+    }
+
+    .danger-button() {
+        background-color: transparent !important;
+        border-color: var(--danger) !important;
+        color: var(--danger) !important;
+        border-radius: var(--radius) !important;
+    }
+
+    .primary2-button() {
+        background-color: var(--primary2) !important;
+        border-color: var(--primary2) !important;
+        color: #fff !important;
+        border-radius: var(--radius) !important;
+    }
+
+    .primary2-button-hover() {
+        background-color: var(--primary2-hover) !important;
+        border-color: var(--primary2-hover) !important;
+        box-shadow: var(--hover-shadow) !important;
+        color: #fff !important;
+    }
 
     /* =========================
        Global
