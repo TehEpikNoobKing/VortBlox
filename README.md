@@ -12,7 +12,8 @@ Right now, there are three options:
 
 - **Dark Mode**: A toggle between the original dark theme and a light theme.
 - **Source-Sans Pro**: Use the original Roblox website font.
-- **Roblox Colours**: Use the original Roblox colours instead of the Vortex colours.
+- **Blue Theme**: Use the original Roblox blue instead of the Vortex purple.
+- **Currency Type**: A choice between the display of Volts, Robux and Tix.
 
 ## Installation
 
