@@ -1,0 +1,1543 @@
+/* ==UserStyle==
+@name VoltBlox
+@namespace github.com/openstyles/stylus
+@version 1.0.0
+@description A theme for playvortex.io that replicates the Roblox 2016 style, just in case the graphics weren't 'nostalgic' enough, I guess...
+@author cloud.bounded
+@preprocessor less
+
+@var checkbox darkMode "Dark Mode" 1
+@var checkbox sourceSansPro "Source-Sans Pro" 0
+@var checkbox robloxColors "Roblox Colours" 0
+
+==/UserStyle== */
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap");
+
+:root {
+    /* =========================
+       Colors
+       ========================= */
+
+    --background: #e3e3e3;
+    --surface: #fff;
+    --text: #191919;
+    --secondary-text: #616161;
+    --border: #b8b8b8;
+    --input-border: rgba(0, 0, 0, 0.15);
+
+    --primary: #7c3aed;
+    --primary-hover: #9050fe;
+
+    --volt-color: rgb(177, 81, 255);
+    --navbar-color: #481b93;
+
+    --primary2: #02b757;
+    --primary2-hover: #3fc679;
+
+    --danger: #e75750;
+
+    /* =========================
+       Effects
+       ========================= */
+
+    --primary-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
+    --hover-shadow: 0 1px 3px rgba(150, 150, 150, 0.74);
+
+    --radius: 3px;
+    --transition: 0.2s ease-in-out;
+    
+    --font: "Figtree"
+}
+
+& when (@robloxColors = 1) {
+    --volt-color: rgb(177, 81, 255);
+}
+
+
+/* =========================
+   Dark Mode
+   ========================= */
+
+& when (@darkMode = 1) {
+    :root {
+        --background: #0b0b12;
+        --surface: #171020;
+        --text: #e5e5ea;
+        --secondary-text: #aaa;
+        --border: #45404d;
+        --input-border: rgba(255, 255, 255, 0.15);
+
+        --primary-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+        --hover-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
+
+        --primary: #7c3aed;
+        --primary-hover: #9050fe;
+
+        --volt-color: rgb(177, 81, 255);
+        --navbar-color: #7c3aed;
+    }
+}
+
+& when (@sourceSansPro = 1) {
+    :root {
+        --font: "Source Sans Pro";
+    }
+}
+
+
+/* =========================
+   Styles
+   ========================= */
+
+.card-style() {
+    background-color: var(--surface) !important;
+    box-shadow: var(--primary-shadow) !important;
+    border-radius: var(--radius) !important;
+}
+
+.input-style() {
+    background: var(--surface) !important;
+    border: 1px solid var(--input-border) !important;
+    border-radius: var(--radius) !important;
+    color: var(--text) !important;
+}
+
+.primary-button() {
+    border: 1px solid var(--primary) !important;
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: #fff !important;
+    border-radius: var(--radius) !important;
+    transition: box-shadow var(--transition) !important;
+}
+
+.primary-button-hover() {
+    background-color: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+    box-shadow: var(--hover-shadow) !important;
+    color: #fff !important;
+}
+
+.danger-button() {
+    background-color: transparent !important;
+    border-color: var(--danger) !important;
+    color: var(--danger) !important;
+    border-radius: var(--radius) !important;
+}
+
+.primary2-button() {
+    background-color: var(--primary2) !important;
+    border-color: var(--primary2) !important;
+    color: #fff !important;
+    border-radius: var(--radius) !important;
+}
+
+.primary2-button-hover() {
+    background-color: var(--primary2-hover) !important;
+    border-color: var(--primary2-hover) !important;
+    box-shadow: var(--hover-shadow) !important;
+    color: #fff !important;
+}
+
+@-moz-document url-prefix("https://playvortex.io") {
+
+    /* =========================
+       Global
+       ========================= */
+
+    body {
+        background: var(--background) !important;
+        font-family: var(--font) !important;
+    }
+
+    .page {
+        max-width: 970px !important;
+    }
+    
+    /* =========================
+       Generic Buttons
+       ========================= */
+
+    .row-edit-btn,
+    .sc-toggle,
+    .btn-primary.grp-card-join,
+    #create-toggle,
+    #cm-submit,
+    .section-link {
+        .primary-button();
+    }
+
+    .row-edit-btn:hover,
+    .sc-toggle:hover,
+    .btn-primary.grp-card-join:hover,
+    #create-toggle:hover,
+    #cm-submit:hover,
+    .section-link:hover {
+        .primary-button-hover();
+    }
+
+    .row-edit-btn {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+
+        margin-top: -12px !important;
+        margin-right: -16px !important;
+
+        padding: 4px 16px !important;
+
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 100% !important;
+        text-align: center !important;
+    }
+
+    .sc-toggle {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+
+        margin-top: -12px !important;
+        margin-right: -16px !important;
+
+        padding: 4px 16px !important;
+
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 100% !important;
+        text-align: center !important;
+        text-decoration: none !important;
+    }
+
+    #create-toggle {
+        display: block !important;
+        width: auto !important;
+        height: 36px !important;
+
+        padding: 4px 16px !important;
+
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 100% !important;
+        text-align: center !important;
+    }
+
+    #cm-submit {
+        display: block !important;
+        width: auto !important;
+        height: 30px !important;
+
+        padding: 4px 16px !important;
+
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 100% !important;
+        text-align: center !important;
+    }
+
+    .section-link {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+
+        padding: 4px 16px !important;
+
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 100% !important;
+        text-align: center !important;
+    }
+
+
+    /* =========================
+       Navbar
+       ========================= */
+
+    .navbar {
+        height: 40px !important;
+        padding-left: 12px !important;
+        background: var(--navbar-color) !important;
+        gap: 0 !important;
+    }
+
+    .navbar-pill {
+        background-color: transparent !important;
+        border-radius: 0 !important;
+        border-color: transparent !important;
+        padding: 0 !important;
+        margin-left: -12px !important;
+    }
+
+    .navbar-pill-btn {
+        width: 132px !important;
+        height: 40px !important;
+        padding: 10px 9px 6px !important;
+        margin-top: -2px !important;
+
+        border-radius: 0 !important;
+        color: #fff !important;
+        
+        & when (@sourceSansPro = 1) {
+            padding-top: 8px !important;
+        }
+    }
+
+    .navbar-pill-btn:hover {
+        background-color: transparent !important;
+        border-bottom: 2px solid #fff !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .navbar-logo {
+        width: 175px !important;
+    }
+
+
+    /* =========================
+       Navbar Buttons
+       ========================= */
+
+    .fa-house::before,
+    .fa-shirt::before,
+    .fa-user-group::before,
+    .fa-download::before {
+        font-size: 16px !important;
+        font-family: var(--font) !important;
+        & when (@sourceSansPro = 1) {
+            font-weight: 400 !important;
+        }
+    }
+
+    .fa-house::before {
+        content: "Home" !important;
+    }
+
+    .fa-shirt::before {
+        content: "Avatar" !important;
+    }
+
+    .fa-user-group::before {
+        content: "Groups" !important;
+    }
+
+    .fa-download::before {
+        content: "Download" !important;
+    }
+
+
+    /* =========================
+       Studio Button (it's seperate for some reason....??)
+       ========================= */
+
+    .navbar-studio-card {
+        width: 132px !important;
+        height: 40px !important;
+
+        display: flex !important;
+        justify-content: center !important;
+
+        padding: 8px 9px 6px !important;
+        margin-top: -2px !important;
+        margin-left: 2px !important;
+
+        font-family: var(--font) !important;
+        font-size: 16px !important;
+        font-weight: 900 !important;
+
+        background-color: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        color: #fff !important;
+        
+        & when (@sourceSansPro = 1) {
+            font-weight: 400 !important;
+        }
+    }
+
+    .navbar-studio-card:hover {
+        background-color: transparent !important;
+        border-bottom: 2px solid #fff !important;
+        margin-top: 0 !important;
+    }
+
+    .navbar-studio-card .navbar-studio-stat {
+        font-size: 12px !important;
+        color: #fff !important;
+    }
+
+
+    /* =========================
+       Search Bar
+       ========================= */
+
+    .navbar-search {
+        display: block !important;
+        height: 28px !important;
+        margin-left: 16px !important;
+    }
+
+    .navbar-search form {
+        height: 28px !important;
+    }
+
+    .navbar-search form i {
+        position: absolute !important;
+        left: auto !important;
+        right: 0.875rem !important;
+    }
+
+    .navbar-search form input {
+        .input-style();
+        padding: 0 36px 0 14px !important;
+    }
+
+
+    /* =========================
+       Volt Display
+       ========================= */
+
+    .navbar-volts-pill {
+        width: auto !important;
+        height: 40px !important;
+
+        padding: 0 !important;
+        margin-top: -2px !important;
+
+        font-family: var(--font) !important;
+        font-size: 16px !important;
+        font-weight: 900 !important;
+
+        background-color: transparent !important;
+        border-color: transparent !important;
+        border-radius: 0 !important;
+        color: #fff !important;
+        
+        & when (@sourceSansPro = 1) {
+            font-weight: 400 !important;
+        }
+    }
+
+    .navbar-volts-pill .volt-icon {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .navbar-volts-pill .volt-icon path {
+        fill: #fff !important;
+    }
+
+
+    /* =========================
+       Profile Icon
+       ========================= */
+
+    .navbar-avatar,
+    .navbar-avatar:hover {
+        background-color: transparent !important;
+    }
+
+    .navbar-avatar .navbar-avatar-img {
+        border-radius: 50% !important;
+        height: 32px !important;
+        width: 32px !important;
+        box-shadow: var(--primary-shadow) !important;
+    }
+
+
+    /* =========================
+       Navbar Settings
+       ========================= */
+
+    .navbar-icon-btn {
+        height: 40px !important;
+        margin-top: -2px !important;
+
+        border-radius: 0 !important;
+        color: #fff !important;
+    }
+
+    .navbar-icon-btn:hover {
+        background-color: transparent !important;
+    }
+
+    .navbar-icon-btn .fa-brands {
+        color: #fff !important;
+    }
+
+
+    /* =========================
+       Home Page
+       ========================= */
+
+    .home-intro .avatar-render-box {
+        width: 130px !important;
+        height: 130px !important;
+        border-radius: 50% !important;
+        clip-path: border-box !important;
+        background-color: #fff;
+        overflow: hidden !important;
+        border: 1px solid #b8b8b8;
+    }
+    
+    #home-preview-canvas {
+        width: 170px !important;
+        height: 220px !important;
+        border-radius: 50% !important;
+        position: relative !important;
+        right: 24px !important;
+        overflow: hidden !important;
+    }
+    
+    .home-greeting {
+        color: var(--text) !important;
+        font-size: 36px !important;
+        height: 130px !important;
+        
+        position: relative !important;
+        top: 10% !important;
+    }
+    
+    #friends-section {
+        margin-left: -162px !important;
+        width: 922px !important;
+    }
+
+    .section-title {
+        color: var(--text) !important;
+        font-size: 24px !important;
+    }
+
+    .friends-row {
+        padding: 16px !important;
+        .card-style();
+    }
+
+    .friend-card {
+        width: 100px !important;
+        height: 144px !important;
+    }
+
+    .friend-avatar-wrap {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .friend-avatar {
+        width: 100% !important;
+        height: 100% !important;
+        margin: 3px auto !important;
+
+        border-radius: 50% !important;
+        box-shadow: var(--primary-shadow) !important;
+        transition: box-shadow var(--transition) !important;
+    }
+
+    .friend-avatar:hover {
+        margin: 3px auto !important;
+        box-shadow: var(--hover-shadow) !important;
+    }
+
+    .friend-name {
+        width: 100% !important;
+        height: 20px !important;
+
+        padding-top: 4px !important;
+
+        overflow: visible !important;
+        text-align: center !important;
+        color: var(--text) !important;
+    }
+
+    .friend-status.offline,
+    .friend-status.in-studio,
+    .friend-status.in-game {
+        width: 100% !important;
+        margin-top: -3px !important;
+        text-align: center !important;
+    }
+
+    .friend-card:hover .friend-name {
+        color: var(--text) !important;
+    }
+
+
+    /* =========================
+       Game Cards
+       ========================= */
+
+    .game-card {
+        .card-style();
+        border: none !important;
+    }
+
+    .game-card-thumb {
+        border-radius: var(--radius) !important;
+    }
+
+    .game-card-title {
+        color: var(--text) !important;
+    }
+
+    .game-card-stat {
+        display: block !important;
+        margin-left: -17px !important;
+    }
+
+    .game-card-stat i {
+        visibility: hidden !important;
+    }
+
+    .game-card-stat::after {
+        content: "playing" !important;
+    }
+
+
+    /* =========================
+       Profile Page
+       ========================= */
+
+    .profile-header {
+        height: 158px !important;
+        padding: 15px !important;
+        margin-bottom: 1rem !important;
+        .card-style();
+    }
+
+    .profile-avatar-wrap {
+        width: 128px !important;
+        height: 128px !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 50% !important;
+    }
+
+    .profile-header-body {
+        height: 128px !important;
+        display: inline-block !important;
+        justify-content: center !important;
+    }
+
+    .profile-username {
+        height: 40px !important;
+        margin: 0 12px 0 0 !important;
+        padding: 5px 0 !important;
+
+        color: var(--text) !important;
+        font-size: 30px !important;
+    }
+
+    .bio-label {
+        color: var(--text) !important;
+        font-size: 24px !important;
+    }
+
+    .bio-box {
+        padding: 0 !important;
+        background-color: transparent !important;
+        border-radius: 0 !important;
+        margin-top: 1rem !important;
+    }
+
+    .bio-text {
+        padding: 15px !important;
+        .card-style();
+        color: var(--text) !important;
+    }
+
+    .profile-last-seen {
+        height: 26px !important;
+        margin: 4px 0 8px !important;
+        font-size: 16px !important;
+    }
+
+    .profile-stats {
+        position: absolute !important;
+        bottom: 0 !important;
+
+        height: 54px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .profile-stats .profile-stat {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        align-items: center !important;
+        padding: 0 5px !important;
+    }
+
+    .profile-stats .profile-stat strong {
+        padding: 5px 0 !important;
+        color: var(--primary) !important;
+        font-size: 24px !important;
+    }
+
+    .profile-actions {
+        height: 38px !important;
+        margin-top: 52px !important;
+        justify-content: right !important;
+    }
+
+    .profile-actions .btn-primary,
+    .profile-actions .btn-secondary {
+        height: 100% !important;
+        font-size: 18px !important;
+    }
+
+    .profile-actions .btn-primary:hover,
+    .profile-actions .btn-secondary:hover {
+        box-shadow: var(--hover-shadow) !important;
+    }
+
+    .profile-actions .btn-secondary {
+        color: var(--text) !important;
+        border-color: var(--text) !important;
+    }
+
+    .profile-actions .btn-secondary:hover {
+        color: var(--text) !important;
+    }
+
+    .profile-header .report-btn {
+        top: 8px !important;
+        right: 8px !important;
+        border-color: var(--text) !important;
+    }
+
+    .profile-header .report-btn:hover {
+        background-color: transparent !important;
+        border-color: #f87171 !important;
+    }
+    
+    .profile-section {
+        margin-top: 1rem !important;
+    }
+
+
+    /* =========================
+       Profile Groups / Info
+       ========================= */
+
+    .groups-row,
+    .profile-info-row {
+        .card-style();
+        color: var(--text) !important;
+    }
+
+    .groups-row {
+        padding: 15px !important;
+    }
+
+    .group-card {
+        padding: 15px !important;
+        border: 1px solid var(--border) !important;
+        border-radius: var(--radius) !important;
+        background-color: var(--surface) !important;
+        color: var(--text) !important;
+    }
+
+    .group-card-name {
+        color: var(--text) !important;
+    }
+
+    .profile-info-row {
+        height: 81px !important;
+        padding: 15px !important;
+        flex-direction: row-reverse !important;
+    }
+
+    .join-date-label {
+        height: 24px !important;
+        color: var(--border) !important;
+        font-size: 16px !important;
+    }
+
+    .join-date-value {
+        height: 27px !important;
+        color: var(--text) !important;
+        font-size: 18px !important;
+    }
+
+    .profile-info-panel {
+        height: 51px !important;
+        padding: 0 !important;
+
+        background-color: transparent !important;
+        text-align: center !important;
+    }
+
+
+    /* =========================
+       Catalog/Avatar Page
+       ========================= */
+
+    .catalog-title,
+    .rotate-toggle {
+        color: var(--text) !important;
+    }
+
+    .fa-lock-open {
+        color: #7ee693 !important;
+    }
+
+    .fa-lock {
+        color: #ff8080 !important;
+    }
+
+    .market-grid {
+        gap: 5px !important;
+    }
+
+    .card,
+    .card.market-card {
+        .card-style();
+    }
+
+    .card.market-card {
+        width: auto !important;
+    }
+
+    .card:hover,
+    .card:hover.market-card {
+        border: 2px solid transparent !important;
+        box-shadow: var(--hover-shadow) !important;
+    }
+
+    .item-name {
+        color: var(--text) !important;
+    }
+
+    .item-price {
+        color: var(--volt-color) !important;
+    }
+    
+    .avatar-canvas-wrap {
+        background-image: url("https://images.rbxcdn.com/6cf9b4254babdbf7.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 8px !important;
+    }
+    
+    .body-type-btn {
+        background-color: transparent !important;
+        border-color: var(--text) !important;
+        color: var(--text) !important;
+        border-radius: var(--radius) !important;
+    }
+    .body-type-btn.active {
+        .primary-button();
+    }
+    
+    #save-btn {
+        .primary-button();
+    }
+    #save-btn:hover {
+        .primary-button-hover();
+    }
+    
+    .item-image-wrap {
+        background-color: var(--surface);
+    }
+
+
+    /* =========================
+       Game Page
+       ========================= */
+
+    .game-banner {
+        border-radius: 0 !important;
+    }
+
+    .game-detail-header {
+        padding: 15px !important;
+        .card-style();
+        border-radius: 0 !important;
+    }
+
+    .game-description-box {
+        padding: 0 !important;
+        background-color: transparent !important;
+    }
+
+    .game-description-label {
+        color: var(--text) !important;
+        font-size: 24px !important;
+    }
+
+    .game-description-text {
+        padding: 15px !important;
+        .card-style();
+
+        border-radius: 0 !important;
+        color: var(--text) !important;
+    }
+
+    .game-detail-title,
+    .game-stat-value {
+        color: var(--text) !important;
+    }
+
+    .game-detail-creator a {
+        color: var(--primary) !important;
+    }
+
+    .game-stat {
+        flex-direction: column-reverse !important;
+    }
+
+
+    /* =========================
+       Play / Join Buttons
+       ========================= */
+
+    .btn-play,
+    .btn-join {
+        .primary2-button();
+    }
+
+    .btn-play:hover,
+    .btn-join:hover {
+        .primary2-button-hover();
+    }
+
+    .btn-play {
+        border-radius: var(--radius) !important;
+    }
+
+
+    /* =========================
+       Server List
+       ========================= */
+
+    .server-list {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .server-card {
+        height: 76px !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+
+        padding: 15px !important;
+        .card-style();
+
+        border-radius: 0 !important;
+    }
+
+    .server-avatar-grid {
+        display: flex !important;
+        width: calc(100% - 180px - 153px) !important;
+        align-items: center !important;
+    }
+
+    .server-avatar-cell {
+        width: 48px !important;
+        height: 48px !important;
+
+        box-shadow: 0 1px 4px 1px rgba(25, 25, 25, 0.3) !important;
+    }
+
+    .server-card-count {
+        position: relative !important;
+        top: calc(50% - 10px) !important;
+
+        width: 153px !important;
+        height: 20px !important;
+
+        margin: 0 20px !important;
+
+        color: var(--text) !important;
+    }
+
+    .btn-join {
+        position: relative !important;
+        top: calc(50% - 14px) !important;
+        right: 0 !important;
+
+        width: 180px !important;
+        height: 28px !important;
+    }
+
+
+    /* =========================
+       Download Page
+       ========================= */
+
+    .dl-hero {
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .dl-hero::before {
+        content: "";
+
+        position: absolute;
+        inset: -10px;
+
+        background-image: url("/assets/thumbnails/8?v=07781601");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        filter: blur(4px) brightness(0.75);
+    }
+
+    .dl-hero > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .dl-hero-title,
+    .dl-hero-sub {
+        color: #fff !important;
+    }
+
+    .dl-card {
+        padding: 15px !important;
+        .card-style();
+    }
+
+    .dl-card-platform {
+        color: var(--text) !important;
+    }
+
+    .fa-brands {
+        color: var(--text) !important;
+    }
+
+    .dl-notice,
+    .dl-code {
+        background: var(--background) !important;
+        border-radius: var(--radius) !important;
+        color: var(--text) !important;
+    }
+
+    .dl-notice strong {
+        color: var(--text) !important;
+    }
+
+
+    /* =========================
+       Download Buttons
+       ========================= */
+
+    .btn-download {
+        .primary-button();
+
+        display: block !important;
+        width: 100% !important;
+
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        vertical-align: middle !important;
+    }
+
+    .btn-download:hover {
+        .primary-button-hover();
+    }
+
+    .btn-download.secondary {
+        background-color: #3a5eed !important;
+        border-color: #3a5eed !important;
+    }
+
+    .btn-download.secondary:hover {
+        background-color: #508afe !important;
+        border-color: #508afe !important;
+        box-shadow: var(--hover-shadow) !important;
+    }
+
+
+    /* =========================
+       Settings Page
+       ========================= */
+
+    .settings-left-col .profile-card,
+    .settings-sidebar {
+        padding: 15px !important;
+        .card-style();
+
+        border: 0 !important;
+    }
+    
+    .settings-left-col {
+        gap: 0.6rem !important;
+    }
+    
+    .settings-left-col .profile-card {
+        height: 48px !important;
+    }
+
+    .settings-left-col .profile-card .profile-avatar-wrap {
+        height: 36px !important;
+        width: 36px !important;
+    }
+    
+    .profile-info .profile-username {
+        font-size: 18px !important;
+        text-align: left !important;
+        padding-top: 8px !important;
+    }
+    
+    .sidebar-tab {
+        border-radius: var(--radius) !important;
+    }
+
+    .sidebar-tab:hover {
+        background-color: var(--primary-hover) !important;
+        box-shadow: var(--hover-shadow) !important;
+        border-color: var(--primary-hover) !important;
+        color: #fff !important;
+    }
+
+    .sidebar-tab.active {
+        background-color: var(--primary) !important;
+        box-shadow: var(--hover-shadow) !important;
+        border-color: var(--primary) !important;
+        color: #fff !important;
+    }
+
+    .section-title-main,
+    .row-label {
+        color: var(--text) !important;
+    }
+
+    .row-value {
+        color: var(--border) !important;
+    }
+    
+    .field-checkbox {
+        background: transparent !important;
+        border: transparent !important;
+        color: var(--text) !important;
+    }
+
+    .btn-danger,
+    .btn-danger-outline,
+    #leave-btn,
+    .user-card-actions .btn-secondary,
+    #cm-cancel {
+        .danger-button();
+    }
+
+    .btn-danger:hover:not(:disabled),
+    .btn-danger-outline:hover:not(:disabled),
+    #leave-btn:hover:not(:disabled),
+    .user-card-actions .btn-secondary:hover,
+    #cm-cancel:hover {
+        background-color: transparent !important;
+        border-color: var(--danger) !important;
+        color: var(--danger) !important;
+    }
+    
+    .sc-form input,
+    .groups-controls input,
+    #group-sort {
+        .input-style();
+        padding: 0 36px 0 14px !important;
+    }
+
+    .sc-form input {
+        height: 32px !important;
+    }
+
+    .groups-controls {
+        height: 36px !important;
+    }
+
+    #group-search {
+        display: block !important;
+        height: 36px !important;
+    }
+
+    .groups-controls form i {
+        position: absolute !important;
+        left: auto !important;
+        right: 0.875rem !important;
+    }
+
+
+    /* =========================
+       Volts Page
+       ========================= */
+
+    .volts-title {
+        color: var(--text) !important;
+    }
+
+    .volts-card {
+        background-color: var(--surface) !important;
+    }
+
+    .volts-card .volt-icon {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .volts-card .btn-primary {
+        .primary-button();
+
+        display: block !important;
+        width: 100% !important;
+        height: 32px !important;
+
+        padding: 4px 16px !important;
+
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 100% !important;
+        text-align: center !important;
+    }
+
+    .volts-card .btn-primary:hover {
+        .primary-button-hover();
+    }
+
+
+    /* =========================
+       Groups Page
+       ========================= */
+
+    .group-head,
+    .group-desc {
+        padding: 15px !important;
+        .card-style();
+
+        border: 0 !important;
+    }
+
+    .group-desc {
+        max-width: 100% !important;
+        color: var(--text) !important;
+        font-size: 16px !important;
+    }
+
+    #group-name {
+        color: var(--text) !important;
+        font-size: 32px !important;
+    }
+
+    .group-head-meta .fa-user-group::before,
+    .grp-card-members .fa-user-group::before {
+        content: var(--fa) !important;
+        font-family: "Font Awesome 6 Free" !important;
+    }
+    
+    .grp-card-join {
+        margin: 0px !important;
+    }
+
+
+    /* =========================
+       Group Members List
+       ========================= */
+
+    .member-list {
+        display: grid !important;
+
+        grid-template-columns: repeat(auto-fill, 104px) !important;
+        grid-auto-rows: 142px !important;
+
+        column-gap: 8px !important;
+        row-gap: 8px !important;
+
+        justify-content: center !important;
+        justify-items: center !important;
+    }
+
+    .member-row {
+        width: 104px !important;
+        height: 142px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.3rem !important;
+
+        padding: 5px !important;
+
+        .card-style();
+
+        border: 0 !important;
+        color: var(--text) !important;
+        font-size: 16px !important;
+    }
+
+    .member-info {
+        width: 100% !important;
+        flex: none !important;
+    }
+
+    .member-avatar {
+        width: 90px !important;
+        height: 90px !important;
+        border-radius: 50% !important;
+    }
+
+    .member-name {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+
+        color: var(--text) !important;
+    }
+
+
+    /* =========================
+       Group Lists
+       ========================= */
+
+    .group-list {
+        grid-template-columns: 100% !important;
+        gap: 15px !important;
+    }
+
+    #mine-section .group-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 15px !important;
+    }
+
+    .grp-card,
+    #mine-section .grp-card {
+        width: 100% !important;
+        height: calc(5rem + 18px) !important;
+
+        padding: 9px !important;
+
+        .card-style();
+
+        border: 0 !important;
+        color: var(--text) !important;
+        font-size: 16px !important;
+    }
+
+    .grp-card-bottom {
+        margin-top: 0 !important;
+        padding-left: 60% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        height: calc(100% - 18px) !important;
+        
+        align-items: flex-end !important;
+    }
+
+    #mine-section .grp-card-bottom {
+        padding-left: 6rem !important;
+        font-size: 18px !important;
+        
+        align-items: flex-start !important;
+        justify-content: flex-end !important;
+        width: 100% !important;
+    }
+
+    .grp-card-text {
+        flex: none !important;
+        width: 55% !important;
+        display: block !important;
+    }
+
+    .grp-card-icon {
+        width: 5rem !important;
+        height: 5rem !important;
+    }
+
+    .grp-card-name,
+    .grp-card-desc {
+        color: var(--text) !important;
+    }
+
+    .grp-card-meta {
+        color: var(--text) !important;
+        width: 75% !important;
+    }
+    
+    .grp-card-members,
+    .grp-card-owner {
+        text-align: right !important;
+        justify-content: flex-end !important;
+    }
+
+    #mine-section .grp-card-meta {
+        font-size: 18px !important;
+    }
+    
+    #mine-section .grp-card-members {
+        justify-content: flex-start !important;
+    }
+
+
+    /* =========================
+       Pagination
+       ========================= */
+
+    .pagination .btn-secondary {
+        background-color: var(--primary) !important;
+        box-shadow: var(--hover-shadow) !important;
+        border-color: var(--primary) !important;
+        color: #fff !important;
+    }
+
+    .pagination .btn-secondary:hover {
+        background-color: var(--primary-hover) !important;
+        box-shadow: var(--hover-shadow) !important;
+        border-color: var(--primary-hover) !important;
+        color: #fff !important;
+    }
+
+
+    /* =========================
+       Modals
+       ========================= */
+
+    .modal {
+        .card-style();
+        color: var(--text) !important;
+    }
+
+    .modal-title {
+        margin: 0 !important;
+        padding-bottom: 10px !important;
+
+        border-bottom: 1px solid var(--text) !important;
+        color: var(--text) !important;
+    }
+
+    .modal-input,
+    .modal-textarea {
+        .input-style();
+        height: auto !important;
+    }
+    
+    .bio-textarea {
+        .input-style();
+        height: auto !important;
+    }
+
+
+    /* =========================
+       Social Page
+       ========================= */
+
+    .user-card {
+        width: 100% !important;
+        height: 120px !important;
+
+        display: block !important;
+
+        padding: 0 !important;
+
+        background-color: var(--surface) !important;
+        border-color: transparent !important;
+        border-radius: 0 !important;
+        color: var(--text) !important;
+    }
+
+    .user-card-avatar {
+        width: 96px !important;
+        height: 96px !important;
+        margin: 12px !important;
+    }
+
+    .user-card-name {
+        position: relative !important;
+        left: 120px !important;
+        bottom: 104px !important;
+
+        width: calc(100% - 120px) !important;
+        height: 20px !important;
+
+        text-align: left !important;
+        color: var(--text) !important;
+    }
+
+    .user-card-actions {
+        position: relative !important;
+        left: 120px !important;
+        bottom: 60px !important;
+
+        width: calc(100% - 128px) !important;
+    }
+
+
+    /* =========================
+       Tab Bars
+       ========================= */
+
+    .tab-bar {
+        display: flex !important;
+        width: 100% !important;
+        max-width: 100% !important;
+
+        background-color: var(--surface) !important;
+        border: 0 !important;
+
+        color: var(--text) !important;
+        font-size: 16px !important;
+    }
+
+    .tab-btn {
+        display: block !important;
+        flex: 1 1 0 !important;
+
+        text-align: center !important;
+        color: var(--text) !important;
+    }
+
+    .tab-btn.active {
+        color: var(--text) !important;
+    }
+
+
+    /* =========================
+       Carousel Buttons
+       ========================= */
+
+    .carousel-arrow {
+        background-color: var(--primary) !important;
+        box-shadow: var(--hover-shadow) !important;
+        border-color: var(--primary) !important;
+        color: #fff !important;
+    }
+
+    .carousel-arrow:hover {
+        background-color: var(--primary-hover) !important;
+        box-shadow: var(--hover-shadow) !important;
+        border-color: var(--primary-hover) !important;
+        color: #fff !important;
+    }
+    
+    /* =========================
+       Legal Shit
+       ========================= */
+
+    .legal-title,
+    .legal-page h2 {
+        color: var(--text) !important;
+    }
+
+    .legal-page p {
+        color: var(--text) !important;
+    }
+
+    .legal-page li {
+        color: var(--secondary-text) !important;
+    }
+
+
+    /* =========================
+       Footer
+       ========================= */
+
+    .site-footer-icon-btn .fa-brands {
+        color: #fff !important;
+    }
+}
