@@ -32,3 +32,4 @@ Installation is easy, simply follow the guide below.
 <img src="previews/social.png" alt="Social Page" title="Social Page">
 <img src="previews/catalog.png" alt="Catalog Page" title="Catalog Page">
 <img src="previews/dark+nosourcesans.png" alt="No Source Sans + Dark" title="No Source Sans + Dark">
+<img src="previews/robloxcolours.png" alt="Roblox Colours" title="Roblox Colours">
