@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name VortBlox
-@namespace github.com/openstyles/stylus
-@version 1.0.0
+@namespace https://userstyles.world/user/TehEpikNoobKing
+@version 1.0.1
 @description A theme for playvortex.io that replicates the Roblox 2016 style, just in case the graphics weren't 'nostalgic' enough, I guess...
 @author cloud.bounded
 @preprocessor less
@@ -1610,7 +1610,7 @@
     .user-card-actions {
         position: relative !important;
         left: 120px !important;
-        bottom: 60px !important;
+        bottom: 66px !important;
 
         width: calc(100% - 128px) !important;
     }
