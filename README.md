@@ -8,7 +8,7 @@
 
 ## Features
 
-Right now, there are three options:
+Right now, there are four options:
 
 - **Dark Mode**: A toggle between the original dark theme and a light theme.
 - **Source-Sans Pro**: Use the original Roblox website font.
