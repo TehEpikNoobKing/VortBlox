@@ -36,6 +36,8 @@
         --primary2: #02b757;
         --primary2-hover: #3fc679;
 
+        --active-tab-color: #7c3aed
+        
         --danger: #e75750;
 
         /* =========================
@@ -49,10 +51,6 @@
         --transition: 0.2s ease-in-out;
 
         --font: "Figtree"
-    }
-
-    & when (@robloxColors = 1) {
-        --volt-color: rgb(177, 81, 255);
     }
 
 
@@ -86,6 +84,17 @@
         }
     }
 
+    & when (@robloxColors = 1) {
+        :root {
+            --primary: #00a2ff;
+            --primary-hover: #00a2ff;
+
+            --volt-color: #02b757;
+            --navbar-color: #0074bd;
+            
+            --active-tab-color: #00a2ff
+        }
+    }
 
     /* =========================
        Styles
@@ -738,6 +747,10 @@
     .group-card-name {
         color: var(--text) !important;
     }
+    
+    .group-card-owner {
+        color: var(--primary) !important;
+    }
 
     .profile-info-row {
         height: 81px !important;
@@ -1083,6 +1096,10 @@
         padding-top: 8px !important;
     }
     
+    .settings-main-panel a {
+        color: var(--primary) !important;
+    }
+    
     .sidebar-tab {
         border-radius: var(--radius) !important;
     }
@@ -1170,12 +1187,16 @@
     }
 
     .volts-card {
-        background-color: var(--surface) !important;
+        background-color: #171020 !important;
     }
 
     .volts-card .volt-icon {
         width: 28px !important;
         height: 28px !important;
+    }
+    
+    .volts-card .volt-icon path {
+        fill: var(--volt-color)
     }
 
     .volts-card .btn-primary {
