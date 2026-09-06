@@ -320,11 +320,13 @@
         border-radius: 0 !important;
         border-color: transparent !important;
         padding: 0 !important;
+        width: calc(100% / 3) !important;
         margin-left: -12px !important;
+        gap: 0 !important;
     }
 
     .navbar-pill-btn {
-        width: 132px !important;
+        flex: 1 !important;
         height: 40px !important;
         padding: 10px 9px 6px !important;
         margin-top: -2px !important;
@@ -394,7 +396,7 @@
 
         padding: 8px 9px 6px !important;
         margin-top: -2px !important;
-        margin-left: 2px !important;
+        margin-left: 0px !important;
 
         font-family: var(--font) !important;
         font-size: 16px !important;
@@ -1385,11 +1387,10 @@
     .member-list {
         display: grid !important;
 
-        grid-template-columns: repeat(auto-fill, 104px) !important;
-        grid-auto-rows: 142px !important;
+        grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)) !important;
 
         column-gap: 8px !important;
-        row-gap: 8px !important;
+        row-gap: 11px !important;
 
         justify-content: center !important;
         justify-items: center !important;
