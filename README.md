@@ -4,11 +4,13 @@
 
 # VortBlox
 
+Have you ever looked at Vortex and went *"wow, this website looks awesome, i want to ruin it by tasting the horrible taste of nostalgia"*? no? whatever.
+
 **VortBlox** is a theme for [Vortex](https://playvortex.io) that uses [Stylus](https://add0n.com/stylus.html) to make the website look like the **2016–2017 Roblox website**.
 
 ## Features
 
-Right now, there are four options:
+There are currently **four** different options that you can modify. More will probably be added in future updates. Maybe, idk.
 
 - **Dark Mode**: A toggle between the original dark theme and a light theme.
 - **Source-Sans Pro**: Use the original Roblox website font.
@@ -17,14 +19,14 @@ Right now, there are four options:
 
 ## Installation
 
-Installation is easy, simply follow the guide below.
+Installation is easy. Easier than tying shoelaces. Which I can’t do, really, the last part always screws me up. All you have to do, is follow the guide below.
 
 1. Install **Stylus**:
    - [Chrome Store](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
    - [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/)
-3. Install the [VortBlox theme](https://userstyles.world/style/30005/vortblox).
+3. Install the [theme](https://userstyles.world/style/30005/vortblox).
 4. Configure using the Extension bar.
-5. ggez.
+5. Well done, you clicked a few times. Want a medal or something.
 
 ## Previews
 <img src="previews/homepage.png" alt="Home Page" title="Home Page">
