@@ -8,7 +8,7 @@
 
 @var checkbox darkMode "Dark Mode" 1
 @var checkbox sourceSansPro "Source-Sans Pro" 0
-@var checkbox robloxColors "Blue Theme" 0
+@var checkbox robloxColors "Roblox Theme" 0
 @var select currencyType "Currency Type" ["Volts", "Robux", "Tickets"]
 
 ==/UserStyle== */
@@ -51,9 +51,9 @@
         --hover-shadow: 0 1px 3px rgba(150, 150, 150, 0.74);
 
         --radius: 3px;
-        --transition: 0.2s ease-in-out;
+        --transition: 0.1s ease-in-out;
 
-        --font: "Figtree"
+        --font: "Figtree";
     }
 
 
@@ -89,17 +89,17 @@
     & when (@robloxColors = 1) {
         :root {
             --primary: #00a2ff;
-            --primary-hover: #00a2ff;
+            --primary-hover: #32B5FF;
             
             --navbar-color: #0074bd;
             
-            --active-tab-color: #00a2ff
+            --active-tab-color: #00a2ff;
         }
     }
     
     & when (@currencyType = Robux) {
         :root {
-            --volt-color: #02b757;;
+            --volt-color: #02b757;
         }
         
         .volt-icon path {
@@ -193,6 +193,15 @@
         border-color: var(--text) !important;
         color: var(--text) !important;
         border-radius: var(--radius) !important;
+        transition: box-shadow var(--transition) !important;
+    }
+    
+    .secondary-button-hover() {
+        background-color: var(--surface) !important;
+        border-color: var(--text) !important;
+        color: var(--text) !important;
+        border-radius: var(--radius) !important;
+        box-shadow: var(--hover-shadow) !important;
     }
 
     /* =========================
@@ -301,6 +310,14 @@
         font-weight: 400 !important;
         line-height: 100% !important;
         text-align: center !important;
+    }
+    
+    .btn-primary {
+        .primary-button();
+    }
+    
+    .btn-primary:hover {
+        .primary-button-hover();
     }
 
 
@@ -626,6 +643,20 @@
         margin-top: -3px !important;
         text-align: center !important;
     }
+    
+    .friend-status.online {
+        color: #00A2FF !important
+    }
+    
+    .friend-status.in-game {
+        color: #02B757 !important
+    }
+    
+    .friend-status.in-studio {
+        & when (@robloxColors = 1) {
+            color: #F68802 !important
+        }
+    }
 
     .friend-card:hover .friend-name {
         color: var(--text) !important;
@@ -770,21 +801,21 @@
         margin-right: -8px !important;
         justify-content: right !important;
     }
-
-    .profile-actions .btn-primary,
-    .profile-actions .btn-secondary {
+    
+    .profile-actions .btn-primary {
         height: 100% !important;
         font-size: 18px !important;
         .primary-button();
     }
-
-    .profile-actions .btn-primary:hover,
-    .profile-actions .btn-secondary:hover {
+    
+    .profile-actions .btn-primary:hover {
         box-shadow: var(--hover-shadow) !important;
         .primary-button-hover();
     }
 
     .profile-actions .btn-secondary {
+        height: 100% !important;
+        font-size: 18px !important;
         color: var(--text) !important;
         border-color: var(--text) !important;
         .secondary-button();
@@ -792,7 +823,7 @@
 
     .profile-actions .btn-secondary:hover {
         color: var(--text) !important;
-        .secondary-button();
+        .secondary-button-hover();
     }
 
     .profile-header .report-btn {
@@ -807,6 +838,40 @@
     
     .profile-section {
         margin-top: 1rem !important;
+    }
+    
+    .status-dot {
+        width: 28px !important;
+        height: 28px !important;
+        background-color: transparent !important;
+        
+        margin-right: 4px !important;
+        border-width: 0px !important;
+        
+        vertical-align: middle !important;
+        background-image: url("https://github.com/TehEpikNoobKing/VortBlox/blob/ae45aa5eb72063cd01315cc8e0ec371a40cbab95/assets/status-icons-vrtx.png?raw=true") !important;
+        & when (@robloxColors = 1) {
+            background-image: url("https://github.com/TehEpikNoobKing/VortBlox/blob/c09fe0ef0790b0e0321055f5a8f417d2c2b4d65a/assets/status-icons.png?raw=true") !important;
+        }
+        background-repeat: no-repeat !important;
+        background-size: 100% !important;
+        display: inline-block !important;
+    }
+    
+    .status-dot.online {
+        background-position: 0 -56px;
+    }
+    
+    .status-dot.in-game {
+        background-position: 0 0;
+    }
+    
+    .status-dot.in-studio {
+        background-position: 0 -28px;
+    }
+    
+    .status-dot.offline {
+        background-position: 0 -84px;
     }
 
 
@@ -1567,10 +1632,6 @@
         height: auto !important;
     }
     
-    .bio-editor .btn-primary {
-        .primary-button()
-    }
-    
     .bio-textarea {
         .input-style();
         height: auto !important;
@@ -1658,7 +1719,7 @@
     .tab-btn.active {
         color: var(--text) !important;
         border-bottom-color: var(--primary);
-        box-shadow: 0 -2px 0 0 var(--primary)inset;
+        box-shadow: 0 -2px 0 0 var(--primary) inset;
     }
 
 
