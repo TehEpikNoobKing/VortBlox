@@ -1567,9 +1567,14 @@
         height: auto !important;
     }
     
+    .bio-editor .btn-primary {
+        .primary-button()
+    }
+    
     .bio-textarea {
         .input-style();
         height: auto !important;
+        padding: 10px !important;
     }
 
 
