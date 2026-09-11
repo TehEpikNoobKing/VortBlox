@@ -1,22 +1,99 @@
 /* ==UserStyle==
 @name VortBlox
 @namespace https://userstyles.world/user/TehEpikNoobKing
-@version 1.0.2
+@version 1.1.0
 @description A theme for playvortex.io that replicates the Roblox 2016 style, just in case the graphics weren't 'nostalgic' enough, I guess...
 @author cloud.bounded
 @preprocessor less
 
+@var select theme "Theme" ["Vortex", "Roblox", "ROBC"]
 @var checkbox darkMode "Dark Mode" 1
-@var checkbox sourceSansPro "Source-Sans Pro" 0
-@var checkbox robloxColors "Roblox Theme" 0
+@var checkbox blueNav "Blue Header in Dark Mode" 0
 @var select currencyType "Currency Type" ["Volts", "Robux", "Tickets"]
+@var checkbox sourceSansPro "Source-Sans Pro" 0
+@var checkbox footer "Change Footer" 0
 
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://playvortex.io") {
-    @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap");
-
-    /* Test */
+    /* =====================
+       Fonts
+       ====================== */
+    
+    /* vietnamese */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 300;
+      src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://web.archive.org/web/20161127044519im_/https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGD_j0nMiB9fPhg_k1wdK2h0.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 300;
+      src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://web.archive.org/web/20161127044519im_/https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGDRVvBvQIc1z78c__uoBcyI.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 300;
+      src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://web.archive.org/web/20161127044519im_/https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGOode0-EuMkY--TSyExeINg.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+    }
+    /* vietnamese */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(https://web.archive.org/web/20161127044519im_/https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlNOAHFN6BivSraYkjhveRHY.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(https://web.archive.org/web/20161127044519im_/https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlC2Q8seG17bfDXYR_jUsrzg.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(https://web.archive.org/web/20161127044519im_/https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlNV_2ngZ8dMf8fLgjYEouxg.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+    }
+    /* vietnamese */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 600;
+      src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(https://web.archive.org/web/20161127044519im_/https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGClYwVOhDRq2vbpGRTZ7bbs.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 600;
+      src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(https://web.archive.org/web/20161127044519im_/https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGFKFh1TDTPrUZWzVp6FtpG8.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 600;
+      src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(https://web.archive.org/web/20161127044519im_/https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCOFnW3Jk0f09zW_Yln67Ac.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+    }
+    
+    
     
     :root {
         /* =========================
@@ -28,7 +105,10 @@
         --text: #191919;
         --secondary-text: #616161;
         --border: #b8b8b8;
+        --search-bar: #fff;
         --input-border: rgba(0, 0, 0, 0.15);
+        
+        --footer: #fff;
 
         --primary: #7c3aed;
         --primary-hover: #9050fe;
@@ -60,14 +140,16 @@
     /* =========================
        Dark Mode
        ========================= */
-
+    
+    
     & when (@darkMode = 1) {
         :root {
             --background: #0b0b12;
             --surface: #171020;
             --text: #e5e5ea;
             --secondary-text: #aaa;
-            --border: #45404d;
+            --border: #6f677c;
+            --search-bar: #232527;
             --input-border: rgba(255, 255, 255, 0.15);
 
             --primary-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
@@ -76,17 +158,13 @@
             --primary: #7c3aed;
             --primary-hover: #9050fe;
 
+            --footer: #0b0b12;
+            
             --volt-color: rgb(177, 81, 255);
         }
     }
-
-    & when (@sourceSansPro = 1) {
-        :root {
-            --font: "Source Sans Pro";
-        }
-    }
-
-    & when (@robloxColors = 1) {
+    
+    & when (@theme = Roblox) {
         :root {
             --primary: #00a2ff;
             --primary-hover: #32B5FF;
@@ -94,6 +172,55 @@
             --navbar-color: #0074bd;
             
             --active-tab-color: #00a2ff;
+            
+            --danger: #D86868
+        }
+        
+        & when (@darkMode = 1) {
+            :root {
+                & when (@blueNav = 0) {
+                    --navbar-color: #1f2123;
+                }
+                
+                --background: #232527;
+                --surface: #393b3d;
+                
+                --footer: #1f2123;
+                
+                --border: #b8b8b8
+            }
+        }
+    }
+    
+    & when (@theme = ROBC) {
+        :root {
+            --background: url("https://github.com/TehEpikNoobKing/VortBlox/blob/d776e07162db9f5a2b4ccfb4028c12dd1c512a10/assets/obc_theme_2016_bg.png?raw=true") repeat-x rgb(34, 34, 36);
+            --surface: #393939;
+            --text: #e5e5ea;
+            --secondary-text: #aaa;
+            --border: #b8b8b8;
+            --search-bar: #232527;
+            --input-border: rgba(255, 255, 255, 0.15);
+
+            --primary-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+            --hover-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
+            
+            --primary: #00a2ff;
+            --primary-hover: #32B5FF;
+            
+            --navbar-color: #393939;
+            
+            --active-tab-color: #00a2ff;
+            
+            --footer: #393939;
+            
+            --danger: #D86868
+        }
+    }
+
+    & when (@sourceSansPro = 1) {
+        :root {
+            --font: "Source Sans Pro";
         }
     }
     
@@ -215,6 +342,34 @@
 
     .page {
         max-width: 970px !important;
+        padding: 0 !important;
+        padding-top: 12px !important;
+        position: relative !important;
+    }
+    
+    .info-msg {
+        color: var(--border) !important;
+    }
+    
+    .empty-msg {
+        color: var(--border) !important;
+    }
+    
+    .section-sep {
+        border-top: 1px solid var(--border) !important;
+        margin: 24px 0 !important;
+    }
+
+    .page-title {
+        font-size: 36px !important;
+        
+        & when (@sourceSansPro = 1) {
+            font-weight: 400 !important;
+        }
+    }
+    
+    [hidden] {
+        display: none !important;
     }
     
     /* =========================
@@ -255,6 +410,10 @@
         text-align: center !important;
     }
 
+    .row-edit-btn[hidden] {
+        display: none !important;
+    }
+    
     .sc-toggle {
         display: block !important;
         width: auto !important;
@@ -319,7 +478,7 @@
     .btn-primary:hover {
         .primary-button-hover();
     }
-
+    
 
     /* =========================
        Navbar
@@ -464,6 +623,8 @@
     .navbar-search form input {
         .input-style();
         padding: 0 36px 0 14px !important;
+        
+        background: var(--search-bar) !important;
     }
 
 
@@ -582,21 +743,29 @@
     
     #friends-section {
         margin-left: -162px !important;
-        width: 922px !important;
+        width: 970px !important;
     }
 
     .section-title {
         color: var(--text) !important;
         font-size: 24px !important;
+        letter-spacing: 0 !important;
         
         & when (@sourceSansPro = 1) {
-            font-weight: 400 !important;
+            font-weight: 300 !important;
         }
     }
-
+    
+    .section-header {
+        margin: 3px 0 6px;
+    }
+    
     .friends-row {
-        padding: 16px !important;
+        padding: 15px !important;
+        margin: 0 0 18px !important;
         .card-style();
+        border-radius: 0 !important;
+        width: 100% !important;
     }
 
     .friend-card {
@@ -653,7 +822,7 @@
     }
     
     .friend-status.in-studio {
-        & when (@robloxColors = 1) {
+        & when (@theme = Roblox) or (@theme = ROBC) {
             color: #F68802 !important
         }
     }
@@ -702,7 +871,9 @@
         height: 158px !important;
         padding: 15px !important;
         margin-bottom: 1rem !important;
+        gap: 12px !important;
         .card-style();
+        border-radius: 0 !important;
     }
 
     .profile-avatar-wrap {
@@ -721,7 +892,7 @@
     .profile-username {
         height: 40px !important;
         margin: 0 12px 0 0 !important;
-        padding: 5px 0 !important;
+        padding: 1px 0 0 0 !important;
 
         color: var(--text) !important;
         font-size: 30px !important;
@@ -730,13 +901,28 @@
             font-weight: 400 !important;
         }
     }
+    
+    .profile-badges {
+        margin-left: 12px !important;
+    }
+    
+    .badge-tooltip-wrap {
+        width: 24.75px !important;
+        margin-right: 0.2rem !important;
+    }
+    
+    .profile-badge-icon {
+        margin-left: 0 !important;
+        margin-bottom: 4px !important;
+    }
 
     .bio-label {
         color: var(--text) !important;
         font-size: 24px !important;
+        margin: 3px 0 6px;
         
         & when (@sourceSansPro = 1) {
-            font-weight: 400 !important;
+            font-weight: 300 !important;
         }
     }
 
@@ -749,13 +935,20 @@
 
     .bio-text {
         padding: 15px !important;
+        margin: 0 0 18px !important;
+        font-size: 16px !important;
         .card-style();
         color: var(--text) !important;
+        border-radius: 0 !important;
+        
+        & when (@sourceSansPro = 1) {
+            font-weight: 300 !important;
+        }
     }
 
     .profile-last-seen {
         height: 26px !important;
-        margin: 4px 0 8px !important;
+        margin: 5px 1px 8px 1px !important;
         font-size: 16px !important;
     }
 
@@ -765,23 +958,31 @@
 
         height: 54px !important;
         margin-bottom: 15px !important;
+        margin-left: -8px !important;
+        
+        width: 29.1% !important;
+        gap: 0 !important;
     }
 
     .profile-stats .profile-stat {
+        width: 33% !important;
+        
         display: flex !important;
         flex-direction: column-reverse !important;
         align-items: center !important;
         padding: 0 5px !important;
         color: var(--border) !important;
+        
+        font-size: 16px !important;
     }
 
     .profile-stats .profile-stat strong {
-        padding: 5px 0 !important;
+        padding: 2px 0 !important;
         color: var(--primary) !important;
         font-size: 24px !important;
         
         & when (@sourceSansPro = 1) {
-            font-weight: 400 !important;
+            font-weight: 300 !important;
         }
     }
     
@@ -791,20 +992,22 @@
     
     .profile-header-body:not(:has(.profile-last-seen)) {
         .profile-actions {
-            margin-top: 58px !important;
+            margin-top: 39px !important;
         }
     }
 
     .profile-actions {
         height: 38px !important;
-        margin-top: 28px !important;
+        margin-top: 6px !important;
         margin-right: -8px !important;
         justify-content: right !important;
+        gap: 0 !important;
     }
     
     .profile-actions .btn-primary {
         height: 100% !important;
         font-size: 18px !important;
+        margin: 0 5px !important;
         .primary-button();
     }
     
@@ -818,6 +1021,7 @@
         font-size: 18px !important;
         color: var(--text) !important;
         border-color: var(--text) !important;
+        margin: 0 5px !important;
         .secondary-button();
     }
 
@@ -827,17 +1031,53 @@
     }
 
     .profile-header .report-btn {
+        .danger-button();
         top: 8px !important;
         right: 8px !important;
-        border-color: var(--text) !important;
+        width: auto !important;
+        height: auto !important;
+        padding: 0 !important;
+        border-color: transparent !important;
+        
+        & when (@sourceSansPro = 1) {
+            font-family: "Source Sans Pro" !important;
+            font-weight: 400 !important;
+        }
     }
-
-    .profile-header .report-btn {
-        .danger-button();
+    
+    .report-btn .fa-solid.fa-flag {
+        visibility: hidden !important;
+        width: 0px !important;
+    }
+    
+    .profile-header .report-btn:after, .report-btn:before {
+        visibility: hidden !important;
+    }
+    
+    .profile-header .report-btn:after {
+        content: "Report Abuse";
+        visibility: visible !important;
+        position: static !important;
+        right: 0 !important;
+        top: 0 !important;
+        text-align: right !important;
+        transform: none !important;
+        background: transparent !important;
+        color: var(--danger) !important;
+        font-size: 0.75rem !important;
+        font-weight: 300 !important;
+        white-space: nowrap !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+        pointer-events: none !important;
+        transition: none !important;
+        z-index: 20 !important;
     }
     
     .profile-section {
-        margin-top: 1rem !important;
+        margin-top: 0 !important;
     }
     
     .status-dot {
@@ -850,7 +1090,7 @@
         
         vertical-align: middle !important;
         background-image: url("https://github.com/TehEpikNoobKing/VortBlox/blob/ae45aa5eb72063cd01315cc8e0ec371a40cbab95/assets/status-icons-vrtx.png?raw=true") !important;
-        & when (@robloxColors = 1) {
+        & when (@theme = Roblox) or (@theme = ROBC) {
             background-image: url("https://github.com/TehEpikNoobKing/VortBlox/blob/c09fe0ef0790b0e0321055f5a8f417d2c2b4d65a/assets/status-icons.png?raw=true") !important;
         }
         background-repeat: no-repeat !important;
@@ -883,6 +1123,7 @@
     .profile-info-row {
         .card-style();
         color: var(--text) !important;
+        border-radius: 0 !important;
     }
 
     .groups-row {
@@ -899,10 +1140,20 @@
 
     .group-card-name {
         color: var(--text) !important;
+        font-size: 18px !important;
+    }
+    
+    .group-card-meta {
+        font-size: 16px !important;
     }
     
     .group-card-owner {
         color: var(--primary) !important;
+        font-size: 16px !important;
+        
+        & when (@sourceSansPro = 1) {
+            font-weight: 400 !important;
+        }
     }
 
     .profile-info-row {
@@ -944,6 +1195,25 @@
        Catalog/Avatar Page
        ========================= */
 
+    .catalog-container {
+        width: 970px !important;
+        max-width: !important 970px;
+        
+        padding: 12px 0 0 0 !important;
+    }
+    
+    .catalog-title {
+        font-size: 36px !important;
+        
+        & when (@sourceSansPro = 1) {
+            font-weight: 400 !important;
+        }
+    }
+    
+    .catalog-layout {
+        gap: 15px !important;
+    }
+    
     .catalog-title,
     .rotate-toggle {
         color: var(--text) !important;
@@ -958,7 +1228,12 @@
     }
 
     .market-grid {
-        gap: 5px !important;
+        grid-template-columns: repeat(auto-fill, calc(134px));
+        gap: 0px !important;
+    }
+    
+    .avatar-panel {
+        flex: 0 0 277px !important;
     }
 
     .card,
@@ -967,7 +1242,8 @@
     }
 
     .card.market-card {
-        width: auto !important;
+        margin: 5px 5px 0 5px !important;
+        width: 124px !important;
     }
 
     .card:hover,
@@ -977,7 +1253,11 @@
     }
     
     .market-card.equipped {
-        border-color: var(--volt-color);
+        border: 2px solid var(--primary2) !important;
+    }
+    
+    .market-card.equipped:hover {
+        border: 2px solid var(--primary2) !important;
     }
 
     .item-name {
@@ -994,6 +1274,9 @@
         background-position: center;
         background-size: cover;
         border-radius: 8px !important;
+        
+        width: 277px !important;
+        height: 352px !important;
     }
     
     .body-type-btn {
@@ -1013,6 +1296,12 @@
         .primary-button-hover();
     }
     
+    #rotate-toggle {
+        height: 40px !important;
+        width: 47px !important;
+        font-size: 18px !important;
+    }
+    
     .item-image-wrap {
         background-color: var(--surface);
     }
@@ -1024,16 +1313,24 @@
     
     .game-banner {
         border-radius: 0 !important;
+        width: 640px !important;
+        height: 360px !important;
     }
 
     .game-detail-header {
-        padding: 15px !important;
         .card-style();
+        padding: 5px 12px 0 24px !important;
         border-radius: 0 !important;
-        
+        width: calc(100% - 24px - 640px) !important;
+        height: 360px !important;
+        position: absolute !important;
+        right: 0 !important;
+        top: 12px !important;
+        flex-direction: column !important;
     }
 
     .game-description-box {
+        margin-bottom: 18px !important;
         padding: 0 !important;
         background-color: transparent !important;
     }
@@ -1041,6 +1338,13 @@
     .game-description-label {
         color: var(--text) !important;
         font-size: 24px !important;
+        
+        letter-spacing: 0 !important;
+        text-transform: none !important;
+        
+        & when (@sourceSansPro = 1) {
+            font-weight: 300 !important;
+        }
     }
 
     .game-description-text {
@@ -1055,13 +1359,71 @@
     .game-stat-value {
         color: var(--text) !important;
     }
-
+    
+    .game-detail-title {
+        font-size: 30px !important;
+        font-weight: 400 !important;
+        line-height: 1em !important;
+        padding-left: 1px !important;
+    }
+    
+    .game-detail-creator {
+        font-size: 16px !important;
+        padding-top: 1px !important;
+        color: var(--border) !important;
+    }
+    
     .game-detail-creator a {
         color: var(--primary) !important;
+        text-decoration: none !important;
+    }
+    
+    .game-detail-creator a:hover {
+        color: var(--primary) !important;
+        text-decoration: underline !important;
+    }
+    
+    .game-detail-stats {
+        position: absolute !important;
+        bottom: 15px !important;
+        
+        width: 270px !important;
+        padding: 12px 0 !important;
+        justify-content: center !important;
+        
+        border-top: 1px solid var(--border) !important;
+        border-bottom: 1px solid var(--border) !important;
     }
 
     .game-stat {
+        width: 45%;
+        height: 51px !important;
         flex-direction: column-reverse !important;
+        justify-content: center !important;
+        gap: 0 !important;
+    }
+    
+    .game-stat-label {
+        font-size: 16px !important;
+        color: var(--border) !important;
+        letter-spacing: 0 !important;
+        text-transform: none !important;
+        font-weight: 400 !important;
+        text-align: center !important;
+        height: 24px !important;
+    }
+    
+    .game-stat-value {
+        gap: 0 !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        justify-content: center !important;
+        height: 27px !important;
+    }
+    
+    .game-stat-value .fa-solid {
+        visibility: hidden !important;
+        width: 0px !important;
     }
 
 
@@ -1080,7 +1442,34 @@
     }
 
     .btn-play {
-        border-radius: var(--radius) !important;
+        border-radius: 5px !important;
+        font-size: 21px !important;
+        font-weight: 400 !important;
+        padding: 15px !important;
+        min-width: 216.48px !important;
+        height: auto !important;
+        text-align: center !important;
+        
+        border: 1px solid var(--primary);
+        
+        position: absolute !important;
+        left: calc(((306px - 216.48px) / 2) + 7px) !important;
+        top: 185px !important;
+        
+        line-height: 100%;
+        display: inline-block !important;
+    }
+    
+    .btn-play::before {
+        position: absolute !important;
+        
+        content: "";
+        width: 270px !important;
+        height: 1px !important;
+        border-top: 1px solid var(--border);
+        
+        left: -28px;
+        top: -38px;
     }
 
 
@@ -1116,6 +1505,11 @@
         height: 48px !important;
 
         box-shadow: 0 1px 4px 1px rgba(25, 25, 25, 0.3) !important;
+    }
+    
+    .server-avatar-more {
+        color: var(--text);
+        background: var(--search-bar);
     }
 
     .server-card-count {
@@ -1196,6 +1590,14 @@
     .dl-notice strong {
         color: var(--text) !important;
     }
+    
+    .dl-footer-note {
+        color: var(--border) !important;
+    }
+    
+    .dl-footer-note a {
+        color: var(--primary) !important;
+    }
 
 
     /* =========================
@@ -1220,13 +1622,13 @@
     }
 
     .btn-download.secondary {
-        background-color: #3a5eed !important;
-        border-color: #3a5eed !important;
+        background-color: #2259d5 !important;
+        border-color: #2259d5 !important;
     }
 
     .btn-download.secondary:hover {
-        background-color: #508afe !important;
-        border-color: #508afe !important;
+        background-color: #3f6ed7 !important;
+        border-color: #3f6ed7 !important;
         box-shadow: var(--hover-shadow) !important;
     }
 
@@ -1243,12 +1645,19 @@
         border: 0 !important;
     }
     
+    .settings-row {
+        border-bottom: 1px solid var(--border)
+    }
+    
     .settings-left-col {
-        gap: 0.6rem !important;
+        width: 160px !important;
+        gap: 0rem !important;
     }
     
     .settings-left-col .profile-card {
-        height: 48px !important;
+        padding: 0px !important;
+        height: 0px !important;
+        visibility: hidden !important;
     }
 
     .settings-left-col .profile-card .profile-avatar-wrap {
@@ -1262,26 +1671,59 @@
         padding-top: 8px !important;
     }
     
+    .settings-left-col .fa-solid {
+        visibility: hidden !important;
+        width: 0px !important;
+    }
+    
+    .settings-sidebar {
+        border-radius: 0 !important;
+        padding: 0 !important;
+    }
+    
     .settings-main-panel a {
         color: var(--primary) !important;
     }
     
+    .sidebar-tabs {
+        gap: 0 !important;
+    }
+    
     .sidebar-tab {
-        border-radius: var(--radius) !important;
+        border-radius: 0 !important;
+        gap: 0 !important;
+        
+        color: var(--text) !important;
+        transition: background 0s, color 0s !important;
+        
+        padding: 9px 5px 9px 9px !important;
+        font-size: 16px !important;
+        
+        font-family: "Figtree" !important;
+        
+        & when (@sourceSansPro = 1) {
+            font-family: "Source Sans Pro" !important;
+            font-weight: 300 !important;
+        }
     }
 
     .sidebar-tab:hover {
-        background-color: var(--primary-hover) !important;
-        box-shadow: var(--hover-shadow) !important;
-        border-color: var(--primary-hover) !important;
-        color: #fff !important;
+        background-color: #00000012 !important;
+        & when (@darkMode = 1) {
+            background-color: #ffffff12 !important;
+        }
+        box-shadow: inset 4px 0 0 0 #00a2ff !important;
     }
 
     .sidebar-tab.active {
-        background-color: var(--primary) !important;
-        box-shadow: var(--hover-shadow) !important;
-        border-color: var(--primary) !important;
-        color: #fff !important;
+        font-weight: 400 !important;
+        background-color: transparent !important;
+        box-shadow: inset 4px 0 0 0 #00a2ff !important;
+        
+        & when (@sourceSansPro = 1) {
+            font-family: "Source Sans Pro" !important;
+            font-weight: 300 !important;
+        }
     }
 
     .section-title-main,
@@ -1635,7 +2077,13 @@
     .bio-textarea {
         .input-style();
         height: auto !important;
-        padding: 10px !important;
+        padding: 15px 15px 15px 14px !important;
+        margin: 0 !important;
+        font-size: 16px !important;
+        
+        & when (@sourceSansPro = 1) {
+            font-weight: 300 !important;
+        }
     }
 
 
@@ -1682,6 +2130,20 @@
 
         width: calc(100% - 128px) !important;
     }
+    
+    .section-grid-header {
+        font-size: 24px;
+        letter-spacing: 0 !important;
+        text-transform: none !important;
+        
+        margin: 3px 0 6px 0 !important;
+        
+        color: var(--text);
+        
+        & when (@sourceSansPro = 1) {
+            font-weight: 500 !important;
+        }
+    }
 
 
     /* =========================
@@ -1692,9 +2154,13 @@
         display: flex !important;
         width: 100% !important;
         max-width: 100% !important;
+        
+        max-height: 40px !important;
 
         background-color: var(--surface) !important;
         border: 0 !important;
+        
+        margin-bottom: 12px !important;
 
         color: var(--text) !important;
     }
@@ -1708,8 +2174,10 @@
         
         overflow: hidden !important;
         
-        font-size: 16px !important;
-        padding: 10px 8px !important;
+        font-size: 18px !important;
+        padding: 8px 8px !important;
+        
+        margin-bottom: 0px !important;
     }
     
     .tab-btn[hidden] {
@@ -1718,8 +2186,8 @@
 
     .tab-btn.active {
         color: var(--text) !important;
-        border-bottom-color: var(--primary);
-        box-shadow: 0 -2px 0 0 var(--primary) inset;
+        border-bottom-color: var(--active-tab-color);
+        box-shadow: 0 -2px 0 0 var(--active-tab-color) inset;
     }
 
 
@@ -1741,6 +2209,11 @@
         color: #fff !important;
     }
     
+    .carousel-arrow[hidden] {
+        opacity: 0.4 !important;
+        display: inline !important;
+    }
+    
     /* =========================
        Legal Shit
        ========================= */
@@ -1757,13 +2230,103 @@
     .legal-page li {
         color: var(--secondary-text) !important;
     }
+    
+    .legal-page a {
+        color: var(--primary)
+    }
+    
+    .legal-page a:hover {
+        color: var(--primary-hover)
+    }
+    
+    .legal-page a, .legal-page a:visited {
+        color: var(--primary-hover)
+    }
 
 
     /* =========================
        Footer
        ========================= */
 
+    .site-footer-icon-btn {
+        border-radius: 5px !important;
+        background-color: var(--surface) !important;
+    }
+    
+    .site-footer-icon-btn:hover {
+        border-color: var(--primary) !important;
+    }
+    
     .site-footer-icon-btn .fa-brands {
         color: #fff !important;
+    }
+    
+    .site-footer {
+        border: 0 !important;
+        background: var(--footer) !important;
+    }
+    
+    .site-footer-links a {
+        color: var(--border);
+    }
+    
+    .site-footer-links a:hover {
+        color: #000;
+        
+        & when (@darkMode = 1) {
+            color: #fff;
+        }
+    }
+    
+    .site-footer-bottom {
+        border-top: 1px solid var(--text) !important;
+    }
+    
+    & when (@footer = 1) {
+        .site-footer-inner {
+            max-width: 970px !important;
+            gap: 0 !important;
+        }
+        
+        .site-footer {
+            padding: 12px !important;
+        }
+        
+        .site-footer-logo {
+            visibility: hidden !important;
+            height: 0px !important;
+        }
+
+        .site-footer-socials {
+            visibility: hidden !important;
+            height: 0px !important;
+        }
+        
+        .site-footer-top {
+            display: block !important;
+        }
+        
+        .site-footer-links {
+            padding-left: 0 !important;
+            text-align: center !important;
+            flex: 0  !important;
+            width: 970px !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+        }
+        
+        .site-footer-links a {
+            margin: 5px !important;
+            font-size: 16px !important;
+        }
+        
+        .site-footer-bottom {
+            padding: 0 !important;
+            margin: 12px auto !important;
+            border-top: none !important;
+            color: #B8B8B8 !important;
+        }
     }
 }
