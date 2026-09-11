@@ -10,12 +10,16 @@ Have you ever looked at Vortex and went *"wow, this website looks awesome, i wan
 
 ## Features
 
-There are currently **four** different options that you can modify. More will probably be added in future updates. Maybe, idk.
+These are the current options available inside the extension's settings:
 
-- **Dark Mode**: A toggle between the original dark theme and a light theme.
-- **Source-Sans Pro**: Use the original Roblox website font.
-- **Blue Theme**: Use the original Roblox blue instead of the Vortex purple.
+- **Theme**: An overall theme to use across the whole website. [Vortex (default), Roblox, ROBC]
+- **Dark Mode**: A toggle to use a dark theme (ROBC theme ignores this setting).
+- **Blue Header in Dark Mode**: Use a blue header even in dark mode.
+
+- **Source-Sans Pro**: Use the Source Sans Pro font.
 - **Currency Type**: A choice between the display of Volts, Robux and Tix.
+
+- **Change Footer**: A choice of the original Vortex footer, which includes social links, and a Roblox style footer.
 
 ## Installation
 
