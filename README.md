@@ -32,6 +32,8 @@ Installation is easy. Easier than tying shoelaces. Which I can’t do, really, t
 4. Configure using the Extension bar.
 5. Well done, you clicked a few times. Want a medal or something.
 
+### [NOTICE] Some items may not load due to CSP permissions. To fix this, follow Stylus' guide.
+
 ## Previews
 <img src="previews/homepage.png" alt="Home Page" title="Home Page">
 <img src="previews/download.png" alt="Download Page" title="Download Page">
