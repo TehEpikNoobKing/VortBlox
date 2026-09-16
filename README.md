@@ -35,6 +35,7 @@ Installation is easy. Easier than tying shoelaces. Which I can’t do, really, t
 ### [NOTICE] Some items may not load due to CSP permissions. To fix this, follow Stylus' guide.
 
 ## Thank yous!
+- [Wayback Machine](https://web.archive.org/) by [The Internet Archive](https://archive.org/)
 - [Roblox Legacy Old Theme](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme) by [tersiswilvin](https://github.com/tersiswilvin)
 - [RO2016](https://www.roblox.com/games/103334965727380/RO2016) by [RO2016 Community](https://www.roblox.com/communities/17099125/RO2016-Community#!/about)
 - Anyone who downloads this theme :3
